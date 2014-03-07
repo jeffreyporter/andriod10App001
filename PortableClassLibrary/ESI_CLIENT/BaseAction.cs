@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace PortableClassLibrary
+namespace PMCS_ESI_CLIENT.ESI.Client.Actions
 {
-    public class BaseAction
+    public class BaseAction : ActionInterface
     {
         private ManualResetEvent allDone = new ManualResetEvent(false);
         private string xmlPayload = "";

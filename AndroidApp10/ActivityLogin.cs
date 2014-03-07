@@ -5,7 +5,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System;
-using PMCS_ESI_CLIENT;
+using PMCS_ESI_CLIENT.ESI.Client.Actions;
 
 namespace AndroidApp10
 {
@@ -31,7 +31,7 @@ namespace AndroidApp10
 
                 ActionInterface actionPerformer = new BaseAction();
                 LoginAction la = new LoginAction(actionPerformer);
-                bool result = la.login(Username, Password, App.MainFrame.DefaultViewModel.clientID);
+                bool result = la.login("Usernamex", "Passwordx", "ClientID001");
 
 
             };
