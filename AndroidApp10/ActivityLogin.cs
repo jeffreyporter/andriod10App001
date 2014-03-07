@@ -24,15 +24,20 @@ namespace AndroidApp10
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.buttonLogin);
+            EditText loginUserName = FindViewById<EditText>(Resource.Id.loginUsername);
+            EditText loginPassword = FindViewById<EditText>(Resource.Id.loginPassword);
 
-            button.Click += delegate { 
-                button.Text = string.Format("{0} xxclicks!", count++);
+            button.Click += delegate
+            {
 
+                String username = loginUserName.Text;
+                String password = loginPassword.Text;
 
                 ActionInterface actionPerformer = new BaseAction();
                 LoginAction la = new LoginAction(actionPerformer);
-                bool result = la.login("Usernamex", "Passwordx", "ClientID001");
+                bool result = la.login("9999", "9999", "posclient1");
 
+                int ff = 0;
 
             };
 

@@ -10,7 +10,7 @@ namespace PMCS_ESI_CLIENT.ESI.Client.Actions
     {
         static ConfigHolder()
         {
-            BaseURL = "http://127.0.0.1";
+            BaseURL = "http://192.168.1.67";
             Port = "8080";
             ContextRoot = "/mpos/stream?action=";
         }
