@@ -20,23 +20,32 @@ namespace AndroidApp10
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.AddItem);
-            
+
+            EditText addItemCode = FindViewById<EditText>(Resource.Id.itemCode);
+
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.buttonAddItem);
 
             button.Click += delegate
             {
-               EditText addItemCode = FindViewById<EditText>(Resource.Id.itemCode);
-
                String theCode = addItemCode.Text;
 
                ActionInterface actionPerformer = new BaseAction();
                LookupItemAction la = new LookupItemAction(actionPerformer);
                productdetailtype result = la.lookupItem("9999", "9999", "posclient1", "70029");
-
-
                addItemCode.Text = result.productname;
+
+               AddItemAction ai = new AddItemAction(actionPerformer);
+               bool resultFromAdd = ai.addItem("9999", "9999", "posclient1", "70029", 1, 3);
+
+                if (resultFromAdd)
+                {
+                    addItemCode.Text = addItemCode.Text + ":true";
+                }  else
+                {
+                    addItemCode.Text = addItemCode.Text + ":false";
+                }
 
            };
         }

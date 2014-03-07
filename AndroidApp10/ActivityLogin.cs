@@ -34,7 +34,7 @@ namespace AndroidApp10
 
                 ActionInterface actionPerformer = new BaseAction();
                 LoginAction la = new LoginAction(actionPerformer);
-                bool result = true;// la.login("9999", "9999", "posclient1");
+                bool result = la.login("9999", "9999", "posclient1");
 
                 if (result)
                 {
