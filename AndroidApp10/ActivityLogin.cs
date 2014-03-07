@@ -12,7 +12,6 @@ namespace AndroidApp10
     [Activity(Label = "AndroidApp10", MainLauncher = true, Icon = "@drawable/icon")]
     public class ActivityLogin : Activity
     {
-        int count = 1;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -37,7 +36,12 @@ namespace AndroidApp10
                 LoginAction la = new LoginAction(actionPerformer);
                 bool result = la.login("9999", "9999", "posclient1");
 
-                int ff = 0;
+                if (result)
+                {
+                    Intent intent = new Intent(this, typeof(ActivityAddItem));
+                  StartActivity(intent);
+
+                }
 
             };
 
