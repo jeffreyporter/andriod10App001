@@ -27,6 +27,13 @@ namespace AndroidApp10
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.buttonAddItem);
 
+
+            string[] items = new string[] { "mark", "tom", "pete", "jeff" };
+            ListView listview1 = FindViewById<ListView>(Resource.Id.listView1);
+            ArrayAdapter<string> adapater = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
+            listview1.Adapter = adapater;
+
+
             button.Click += delegate
             {
                String theCode = addItemCode.Text;
